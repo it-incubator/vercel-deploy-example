@@ -27,11 +27,12 @@ async function bootstrap() {
       .setVersion('1.0')
       .build();
     const documentFactory = () => SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup('api', app, documentFactory);
+    SwaggerModule.setup('swagger', app, documentFactory);
   }
 
   // ПОРТ тоже достаём из coreConfig. Стараемся в коде забыть про дефолты вовсе, чтобы цент истины был в .env файлах
   console.log('process.env.PORT: ', coreConfig.port);
+  console.log('process.env.FILE_NAME: ', coreConfig.fileName);
   await app.listen(coreConfig.port);
 }
 bootstrap();

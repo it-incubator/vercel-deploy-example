@@ -22,6 +22,8 @@ export class CoreConfig {
   )
   port: number = Number(this.configService.get('PORT'));
 
+  fileName: number = this.configService.get('FILE_NAME');
+
   @IsNotEmpty({
     message:
       'Set Env variable MONGO_URI, example: mongodb://localhost:27017/my-app-local-db',
