@@ -3,6 +3,8 @@ import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { CoreConfig } from './core/core.config';
 
+console.log('NODE_ENV: ' + process.env.NODE_ENV);
+
 async function bootstrap() {
   // из-за того, что нам нужно донастроить динамический AppModule, мы не можем сразу создавать приложение
   // а создаём сначала контекст
