@@ -18,6 +18,7 @@ async function bootstrap() {
   // Закрываем контекст, если он больше не нужен
   await appContext.close();
 
+  console.log('coreConfig.isSwaggerEnabled: ' + coreConfig.isSwaggerEnabled);
   // тут же используем управляемую нестом конфигурацию, чтобы включить или выключить swagger
   if (coreConfig.isSwaggerEnabled) {
     const config = new DocumentBuilder()
