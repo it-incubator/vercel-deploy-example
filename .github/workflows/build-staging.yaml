@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - develop
+
 jobs:
   deploy:
     uses: it-incubator/ci-cd-pipelines/.github/workflows/build-and-deploy.yaml@master
