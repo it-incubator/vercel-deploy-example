@@ -13,7 +13,7 @@ jobs:
       environment: staging
       registry_hostname: ${{ vars.DOCKER_USERNAME }}
       argocd_server: argocd.staging.it-incubator.ru
-      app_name: example-deploy
+      app_name: deploy-example
       deploy_url: https://vercel-deploy-example.staging.it-incubator.ru
 
       dockerfile: ./Dockerfile
