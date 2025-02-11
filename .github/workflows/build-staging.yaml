@@ -1,0 +1,33 @@
+name: Deploy to https://vercel-deploy-example.staging.it-incubator.io
+
+on:
+  push:
+    branches:
+      - develop
+##  pull_request:
+##    branches:
+##      - develop
+#  issue_comment:
+#    types: [created]
+
+jobs:
+  deploy:
+    uses: it-incubator/gitops/.github/workflows/build-and-deploy.yaml@main
+    with:
+      project: vercel
+      environment: staging
+      registry_hostname: ${{ vars.DOCKER_USERNAME }}
+      argocd_server: argocd.staging.it-incubator.ru
+      app_name: example-deploy
+
+      dockerfile: ./Dockerfile
+      pull_request_number: ${{ github.event.issue.number }}
+      comment_body: ${{ github.event.comment.body }}
+      docker_username: ${{ vars.DOCKER_USERNAME }}
+      run_id: ${{ github.run_id }}
+      sha: ${{ github.sha }}
+    secrets:
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
+      ARGOCD_AUTH_TOKEN: ${{ secrets.STG_ARGOCD_TOKEN }}
+
