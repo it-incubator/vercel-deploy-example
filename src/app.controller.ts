@@ -10,6 +10,7 @@ export class AppController {
     return {
       PORT: this.appConfig.port,
       MONGO_URI: this.appConfig.mongoURI,
+      TEST_VALUE: this.appConfig.testValue,
     };
   }
 }
