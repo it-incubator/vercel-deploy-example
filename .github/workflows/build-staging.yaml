@@ -1,4 +1,4 @@
-name: Deploy to https://vercel-deploy-example.staging.it-incubator.io
+name: Deploy to STAGING
 
 on:
   push:
@@ -7,13 +7,14 @@ on:
 
 jobs:
   deploy:
-    uses: it-incubator/gitops/.github/workflows/build-and-deploy.yaml@main
+    uses: it-incubator/ci-cd-pipelines/.github/workflows/build-and-deploy.yaml@main
     with:
       project: vercel
       environment: staging
       registry_hostname: ${{ vars.DOCKER_USERNAME }}
       argocd_server: argocd.staging.it-incubator.ru
       app_name: example-deploy
+      deploy_url: https://vercel-deploy-example.staging.it-incubator.ru
 
       dockerfile: ./Dockerfile
       pull_request_number: ${{ github.event.issue.number }}
