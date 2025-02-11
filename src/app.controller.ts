@@ -11,6 +11,7 @@ export class AppController {
       PORT: this.appConfig.port,
       MONGO_URI: this.appConfig.mongoURI,
       TEST_VALUE: this.appConfig.testValue,
+      FILE_NAME: this.appConfig.fileName,
     };
   }
 }
