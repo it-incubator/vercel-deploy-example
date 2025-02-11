@@ -10,7 +10,7 @@ jobs:
     uses: it-incubator/ci-cd-pipelines/.github/workflows/build-and-deploy.yaml@master
     with:
       project: vercel
-      environment: Staging
+      environment: staging
       registry_hostname: ${{ vars.DOCKER_USERNAME }}
       argocd_server: argocd.staging.it-incubator.ru
       app_name: example-deploy
