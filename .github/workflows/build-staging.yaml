@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    uses: it-incubator/ci-cd-pipelines/.github/workflows/build-and-deploy.yaml@main
+    uses: it-incubator/ci-cd-pipelines/.github/workflows/build-and-deploy.yaml@master
     with:
       project: vercel
       environment: staging
