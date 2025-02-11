@@ -23,6 +23,7 @@ export class CoreConfig {
   port: number = Number(this.configService.get('PORT'));
 
   fileName: number = this.configService.get('FILE_NAME');
+  testValue: number = this.configService.get('TEST_VALUE');
 
   @IsNotEmpty({
     message:
